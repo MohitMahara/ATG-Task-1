@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+.global {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+.layout-padding {
+  @apply mx-auto px-[165px];
+}
+.circle{
+  border-radius:50%;
+}
+.circle_right{
+  
+  width: 450px;
+  height: auto;
+  margin-left: 20px;
+}
+.hero-grid {
+  background-color: #000000;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 120px
+    );
+}
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+
+/* for curved section bottom */
+.curved-bottom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 50% 50%;
+}
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffff;
+    --foreground: #ededed;
+  }
+}
+@media (max-width: 908px) {
+  .layout-padding {
+    @apply px-4;
+  }
+}
+@media (max-width: 500px) {
+  .layout-padding {
+    @apply px-0.5;
+  }
+}
+
+body {
+  
+  color: var(--foreground);
+}
+
