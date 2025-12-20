@@ -16,7 +16,6 @@ export default function Signup() {
   });
   const { login } = useAuth();
 
-  // 🔹 Added for API integration
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
